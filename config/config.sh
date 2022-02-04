@@ -16,7 +16,7 @@ else
     printf "\nConfiguring python environment...\n"		
     python -m venv environment
 
-    source entorno/bin/activate
+    source envirionment/bin/activate
    
     pip install peewee
     pip install uvicorn 

@@ -1,18 +1,24 @@
 #!/bin/bash
+""Author: Hernandez Lopez Raul @Neo
+  e-mail:  freeenergy1974@gmail.com
+  date: friday,    february 4,  2022
+
+  is placed in the directory where the environment should be 
+  found""
 
 cd ../Back/Python_WS/
 
-entorno="entorno"
 
-if [ -d $entorno ]; then 
-    printf "\nEl entorno ya existe y esta configurado"
-    source entorno/bin/activate
+if [ -d "environment" ]; then 
+    printf "\nThe environment already exists and is configured\n"
+    source environment/bin/activate
 else	
-    printf "\nConfigurando entorno de python..."		
-    python -m venv entorno 
+    ""Creation and configuration of the python environment""	
+    printf "\nConfiguring python environment...\n"		
+    python -m venv environment
 
     source entorno/bin/activate
-
+   
     pip install peewee
     pip install uvicorn 
     pip install fastapi

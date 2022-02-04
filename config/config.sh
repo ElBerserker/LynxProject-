@@ -6,6 +6,7 @@ entorno="entorno"
 
 if [ -d $entorno ]; then 
     printf "\nEl entorno ya existe y esta configurado"
+    source entorno/bin/activate
 else	
     printf "\nConfigurando entorno de python..."		
     python -m venv entorno 

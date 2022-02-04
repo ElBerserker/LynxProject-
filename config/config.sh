@@ -10,13 +10,13 @@ cd ../Back/Python_WS/
 
 if [ -d "environment" ]; then 
     printf "\nThe environment already exists and is configured\n"
-    source entorno/bin/activate
+    source environment/bin/activate
 else	
     """Creation and configuration of the python environment"""	
     printf "\nConfiguring python environment...\n"		
-    python -m venv entorno
+    python -m venv environment
 
-    source entorno/bin/activate
+    source environment/bin/activate
    
     pip install peewee
     pip install uvicorn 

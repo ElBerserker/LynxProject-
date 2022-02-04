@@ -1,9 +1,9 @@
 #!/bin/bash
-"""Author: Hernandez Lopez Raul @Neo
-e-mail:  freeenergy1974@gmail.com
-date: friday,    february 4,  2022
-is placed in the directory where the environment should be 
-found"""
+#Author: Hernandez Lopez Raul @Neo
+#e-mail:  freeenergy1974@gmail.com
+#date: friday,    february 4,  2022
+#is placed in the directory where the environment should be 
+#found
 
 cd ../Back/Python_WS/
 

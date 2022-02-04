@@ -27,7 +27,7 @@ class User(Model):
 
 class SatisfactionSurvey(Model):
     id_satisfaction_survey = CharField(max_length = 30, unique = True)
-    survey = ForeignKeyField(Survey, backref = 'level_of_satisfaction')
+    survey = ForeignKeyField(Surveys, backref = 'level_of_satisfaction')
     user = ForeignKeyField(User, backref= 'level_of_satisfaction')
     date_and_time = DateTimeField(default = datetime.now)
     level_of_satisfaction = IntegerField()

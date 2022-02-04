@@ -19,7 +19,7 @@ class User(Model):
     status = CharField(max_length = 10)
 
     def __str__(self):
-        return self.name_of_user
+        return self.id_user
     
     class Meta:
         database = database
@@ -27,7 +27,8 @@ class User(Model):
 
 class SatisfactionSurvey(Model):
     id_satisfaction_survey = CharField(max_length = 30, unique = True)
-    user = ForeignKeyField(User, backref='level_of_satisfaction')
+    survey = ForeignKeyFiel(Survey, backref = 'level_of_satisfaction')
+    user = ForeignKeyField(User, backref= 'level_of_satisfaction')
     date_and_time = DateTimeField(default = datetime.now)
     level_of_satisfaction = IntegerField()
     coment = CharField(max_length = 120)

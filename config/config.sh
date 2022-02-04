@@ -1,7 +1,7 @@
 #!/bin/bash
 #Author: Hernandez Lopez Raul @Neo
 #e-mail:  freeenergy1974@gmail.com
-#date: friday,    february 4,  2022
+#date: friday,   february 4,  2022
 #is placed in the directory where the environment should be 
 #found
 

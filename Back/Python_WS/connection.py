@@ -12,7 +12,7 @@ database = MySQLDatabase('prueba',
                         host='192.168.1.70',
                         port=3306)
 class User(Model):
-    id_user = CharField(max_length = 30, unique = True)
+    id_user = CharField(max_length = 30, unique = True, primary_key = True)
     type_of_user = CharField(max_length = 30)
     name_of_user = CharField(max_length = 30, unique = True)
     password = CharField(max_length = 30)
@@ -26,7 +26,7 @@ class User(Model):
         table_name = 'users'
 
 class Surveys(Model):
-    id_survey = CharField(max_length = 30, unique = True)
+    id_survey = CharField(max_length = 30, unique = True, primary_key = True)
     name_survey = CharField(max_length = 50, unique = True)
 
     def __str__(self):
@@ -37,7 +37,7 @@ class Surveys(Model):
         table_name = 'surveys'
 
 class SatisfactionSurvey(Model):
-    id_satisfaction_survey = CharField(max_length = 30, unique = True)
+    id_satisfaction_survey = CharField(max_length = 30, unique = True, primary_key = True)
     survey = ForeignKeyField(Surveys, backref = 'level_of_satisfaction')
     user = ForeignKeyField(User, backref= 'level_of_satisfaction')
     date_and_time = DateTimeField(default = datetime.now)

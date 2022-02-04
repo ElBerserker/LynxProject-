@@ -27,14 +27,14 @@ class User(Model):
 
 class SatisfactionSurvey(Model):
     id_satisfaction_survey = CharField(max_length = 30, unique = True)
-    user = ForenignKeyField(User, backref = 'responses')
+    user = ForeignKeyField(User, backref='level_of_satisfaction')
     date_and_time = DateTimeField(default = datetime.now)
     level_of_satisfaction = IntegerField()
     coment = CharField(max_length = 120)
-    folio_ticket CharField(max_length = 30, unique = True)
+    folio_ticket = CharField(max_length = 30, unique = True)
     
     def __str__(self):
-        return f'{self.user.name_of_user} - {self.level_of_satisfaction}'
+        return f'{self.user.id_user} - {self.id_satisfaction_survey}'
 
     class Meta:
         database = database
@@ -43,7 +43,7 @@ class SatisfactionSurvey(Model):
       
 class Surveys(Model):
     id_survey = CharField(max_length = 30, unique = True)
-    name_survey CharField(max_length = 50, unique = True)
+    name_survey = CharField(max_length = 50, unique = True)
 
     def __str__(self):
         return self.name_survey

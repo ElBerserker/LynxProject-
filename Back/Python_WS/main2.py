@@ -5,7 +5,7 @@
 from fastapi import FastAPI
 from connection import User
 from connection import SatisfactionSurvey
-form connection import Surveys
+from connection import Surveys
 from connection import database as connection
 
 

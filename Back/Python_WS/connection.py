@@ -32,6 +32,10 @@ class Surveys(Model):
     def __str__(self):
         return self.id_survey
 
+    class Meta:
+        database = database
+        table_name = 'surveys'
+
 class SatisfactionSurvey(Model):
     id_satisfaction_survey = CharField(max_length = 30, unique = True)
     survey = ForeignKeyField(Surveys, backref = 'level_of_satisfaction')

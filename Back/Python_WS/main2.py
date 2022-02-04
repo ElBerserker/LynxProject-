@@ -3,6 +3,9 @@
 #date:Miercoles 19 de enero del 2022
 
 from fastapi import FastAPI
+from connection import User
+from connection import SatisfactionSurvey
+form connection import Surveys
 from connection import database as connection
 
 
@@ -14,7 +17,8 @@ app = FastAPI(title = 'Conexion',
 def startup():
     if connection.is_closed():
         connection.connect()
-        print('Conectando...')
+        connection.create_tables([User, SatisfactionSurvey, Surveys])
+        print('Conexion exitosa')
 
 #Creates an event to close the connection to the database before the server shuts down.
 @app.on_event('shutdown')

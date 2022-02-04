@@ -2,9 +2,9 @@
 
 cd ../Back/Python_WS/
 
-entorno="/entorno"
+entorno="entorno"
 
-if [ -e $entorno ]; then 
+if [ -d $entorno ]; then 
     printf "\nEl entorno ya existe y esta configurado"
 else	
     printf "\nConfigurando entorno de python..."		

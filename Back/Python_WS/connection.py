@@ -25,6 +25,13 @@ class User(Model):
         database = database
         table_name = 'users'
 
+class Surveys(Model):
+    id_survey = CharField(max_length = 30, unique = True)
+    name_survey = CharField(max_length = 50, unique = True)
+
+    def __str__(self):
+        return self.id_survey
+
 class SatisfactionSurvey(Model):
     id_satisfaction_survey = CharField(max_length = 30, unique = True)
     survey = ForeignKeyField(Surveys, backref = 'level_of_satisfaction')
@@ -41,10 +48,3 @@ class SatisfactionSurvey(Model):
         database = database
         table_name = 'satisfaction_survey'
 
-      
-class Surveys(Model):
-    id_survey = CharField(max_length = 30, unique = True)
-    name_survey = CharField(max_length = 50, unique = True)
-
-    def __str__(self):
-        return self.id_survey

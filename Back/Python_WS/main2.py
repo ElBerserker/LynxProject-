@@ -31,3 +31,7 @@ def shutdown():
 @app.get('/')
 async def index():
     return 'Hola Mundo'
+
+@app.post('/user/')
+def create_user():
+

@@ -22,4 +22,5 @@ else
     pip install uvicorn 
     pip install fastapi
     pip install PyMySQL
+    pip install pydantic
 fi    

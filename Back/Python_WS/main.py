@@ -3,9 +3,9 @@
 #date:Miercoles 19 de enero del 2022
 
 from fastapi import FastAPI
-from connection import User
-from connection import SatisfactionSurvey
-from connection import Surveys
+from conexion import User
+from conexion import SatisfactionSurvey
+from conexion import Surveys
 from esquema import UserBaseModel
 from esquema import SurveysBaseModel
 from esquema import SatisfactionSurveyBaseModel

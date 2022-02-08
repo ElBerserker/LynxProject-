@@ -9,7 +9,7 @@ from connection import Surveys
 from esquema import UserBaseModel
 from esquema import SurveysBaseModel
 from esquema import SatisfactionSurveyBaseModel
-from connection import database as connection
+from conexion import database as conexion
 
 
 app = FastAPI(title = 'Conexion',
@@ -19,16 +19,16 @@ app = FastAPI(title = 'Conexion',
 #Creates an event to establish the connection to the database before the server starts.
 @app.on_event('startup')
 def startup():
-    if connection.is_closed():
-        connection.connect()
-        connection.create_tables([User, SatisfactionSurvey, Surveys])
+    if conexion.is_closed():
+        conexion.connect()
+        conexion.create_tables([User, SatisfactionSurvey, Surveys])
         print('Conexion exitosa')
 
 #Creates an event to close the connection to the database before the server shuts down.
 @app.on_event('shutdown')
 def shutdown():
-    if not connection.is_closed():
-        connection.close()
+    if not conexion.is_closed():
+        conexion.close()
         print('Apagando...');
 
 #Allows multiple requests to be executed and resolved asynchronously. 

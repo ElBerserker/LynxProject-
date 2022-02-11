@@ -12,6 +12,7 @@ class UserBaseModel(BaseModel):
     type_of_user: str
     name_of_user: str
     password: str
+    confirm_password: str
     status: str
 
     @validator('id_user')

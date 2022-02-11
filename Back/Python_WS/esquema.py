@@ -4,6 +4,7 @@
 
 
 from pydantic import BaseModel
+from pydantic import validator
 
 #Models for evaluating input data types
 class UserBaseModel(BaseModel):

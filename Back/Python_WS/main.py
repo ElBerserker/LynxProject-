@@ -3,6 +3,8 @@
 #date:Miercoles 19 de enero del 2022
 
 from fastapi import FastAPI
+from fastapi import HTTPExeption
+
 from conexion import User
 from conexion import SatisfactionSurvey
 from conexion import Surveys
@@ -40,6 +42,9 @@ async def index():
 #verifying that the data entered are of the requested type.
 @app.post('/user/')
 async def create_user(user: UserBaseModel):
+    if User.select().where(User.name_user == user.name_user).exist():
+        return  HTTPExeption(409, "Ya existe un usuario con ese nombre")
+
     user = User.create(
             id_user = user.id_user,
             type_of_user = user.type_of_user,
@@ -70,6 +75,4 @@ async def create_satisfaction_survey(satisfaction_system: SatisfactionSurveyBase
                     coment = SatisfactionSurvey.coment,
                     folio_ticket = SatisfactionSurvey.folio_ticket
                     )
-
-
 
